@@ -10,6 +10,8 @@ class SuperHeroesPage extends StatefulWidget {
 
 class _SuperHeroesPageState extends State<SuperHeroesPage> {
   Quiz quiz = Quiz();
+  List<bool> resultadosHistorial = [];
+  int contador = 1;
   Widget resultado = SizedBox();
   @override
   Widget build(BuildContext context) {
@@ -33,27 +35,68 @@ class _SuperHeroesPageState extends State<SuperHeroesPage> {
                 child: Image.network(quiz.getImage(), fit: BoxFit.cover),
               ),
             ),
-            Column(
-              children: List.generate(quiz.getOptions().length, (index) {
-                String option = quiz.getOptions()[index];
+            Center(
+              child: Wrap(
+                alignment: WrapAlignment.center,
+                runAlignment: WrapAlignment.center,
+                spacing: 10,
+                runSpacing: 10,
+                children: List.generate(quiz.getOptions().length, (index) {
+                  String option = quiz.getOptions()[index];
 
-                return ElevatedButton(
-                  onPressed: () {
-                    bool esCorrecto = quiz.checkAnswer(option);
+                  return ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.blueGrey,
+                      foregroundColor: Colors.white,
+                      padding: EdgeInsets.symmetric(
+                        vertical: 55,
+                        horizontal: 40,
+                      ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                    ),
+                    onPressed: () {
+                      bool esCorrecto = quiz.checkAnswer(option);
 
-                    setState(() {
-                      resultado = esCorrecto
-                          ? Icon(Icons.check, color: Colors.green, size: 40)
-                          : Icon(Icons.close, color: Colors.red, size: 40);
-                      quiz.nextQuestion();
-                    });
-                  },
-                  child: Text(option),
-                );
-              }),
+                      setState(() {
+                        resultadosHistorial.add(esCorrecto);
+
+                        contador++;
+                        resultado = esCorrecto
+                            ? Icon(Icons.check, color: Colors.green, size: 40)
+                            : Icon(Icons.close, color: Colors.red, size: 40);
+                        quiz.nextQuestion();
+                      });
+                    },
+                    child: Text(option),
+                  );
+                }),
+              ),
             ),
             SizedBox(height: 20),
             resultado,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: List.generate(resultadosHistorial.length, (index) {
+                bool esCorrecto = resultadosHistorial[index];
+
+                return Row(
+                  children: [
+                    Text(
+                      "${index + 1}.",
+                      style: TextStyle(color: Colors.black),
+                    ),
+                    Icon(
+                      esCorrecto ? Icons.check : Icons.close,
+                      color: esCorrecto ? Colors.green : Colors.red,
+                      size: 1,
+                    ),
+                    SizedBox(width: 8),
+                  ],
+                );
+              }),
+            ),
           ],
         ),
       ),

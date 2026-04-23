@@ -5,13 +5,18 @@ class Quiz {
   List<QuestionsModel> questionList = [
     QuestionsModel(
       urlImage:
-          "https://media.gq.com.mx/photos/5be9c4bb5c1fcb178a4c276f/4:3/w_2248,h_1686,c_limit/capitan_america_chris_evans_desmiente_tuit_de_despedida__6401.jpg",
-      answer: "Capitán América",
+          "https://f.rpp-noticias.io/2026/03/18/325232_1849247.jpg?width=1020&quality=80",
+      answer: "Spider-Man",
     ),
     QuestionsModel(
       urlImage:
-          "https://hips.hearstapps.com/hmg-prod/images/iron-man-1-1554387074.jpg",
-      answer: "Iron Man",
+          "https://i0.wp.com/www.gamerfocus.co/wp-content/uploads/2022/08/the-flash-serie-cancelada-temporada-9-2.jpg?fit=1076%2C728&ssl=1",
+      answer: "Flash",
+    ),
+    QuestionsModel(
+      urlImage:
+          "https://media.gq.com.mx/photos/5be9c4bb5c1fcb178a4c276f/4:3/w_2248,h_1686,c_limit/capitan_america_chris_evans_desmiente_tuit_de_despedida__6401.jpg",
+      answer: "Capitán América",
     ),
     QuestionsModel(
       urlImage:
@@ -20,13 +25,8 @@ class Quiz {
     ),
     QuestionsModel(
       urlImage:
-          "https://f.rpp-noticias.io/2026/03/18/325232_1849247.jpg?width=1020&quality=80",
-      answer: "Spider-Man",
-    ),
-    QuestionsModel(
-      urlImage:
-          "https://i0.wp.com/www.gamerfocus.co/wp-content/uploads/2022/08/the-flash-serie-cancelada-temporada-9-2.jpg?fit=1076%2C728&ssl=1",
-      answer: "Flash",
+          "https://hips.hearstapps.com/hmg-prod/images/iron-man-1-1554387074.jpg",
+      answer: "Iron Man",
     ),
   ];
 
