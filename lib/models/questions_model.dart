@@ -1,5 +1,5 @@
 class QuestionsModel {
-  String question = "¿Como se llama el superheroe";
+  String question = "¿Como se llama el superhéroe";
   String urlImage;
   List<String> options = [
     "Capitán América",

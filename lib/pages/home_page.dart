@@ -23,7 +23,7 @@ class _SuperHeroesPageState extends State<SuperHeroesPage> {
             Padding(
               padding: const EdgeInsets.all(25.0),
               child: Text(
-                "¿Cómo se llama el superheroe?",
+                "¿Cómo se llama el superhéroe?",
                 style: TextStyle(fontSize: 25),
               ),
             ),
