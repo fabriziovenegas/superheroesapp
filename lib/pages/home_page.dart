@@ -90,7 +90,7 @@ class _SuperHeroesPageState extends State<SuperHeroesPage> {
                     Icon(
                       esCorrecto ? Icons.check : Icons.close,
                       color: esCorrecto ? Colors.green : Colors.red,
-                      size: 1,
+                      size: 16,
                     ),
                     SizedBox(width: 8),
                   ],
